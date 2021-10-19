@@ -1,0 +1,53 @@
+<form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Registro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="firstName">
+            <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellido" formControlName="lastName">
+            <mat-error *ngIf="registerForm.controls['lastName'].hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Password" formControlName="password"  type="password"/>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions  class="centrado">
+      <button [disabled] = "registerForm.invalid" mat-raised-button color="primary" type="submit">Registrarse</button>
+      <button mat-raised-button color="primary" (click)="atras()">Atrás<source media="(min-width: )" srcset=""></button>
+    </mat-card-actions>
+  </mat-card>
+</form>

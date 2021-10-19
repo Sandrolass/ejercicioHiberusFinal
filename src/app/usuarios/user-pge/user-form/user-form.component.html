@@ -1,0 +1,55 @@
+<form [formGroup]="formGroup" novalidate >
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Visualización Usuarios</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="name" formControlName="name">
+            <mat-error *ngIf="formGroup.controls['name'].hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="surname" formControlName="surname">
+            <mat-error *ngIf="formGroup.controls['surname'].hasError('required')">
+              Surname is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="email" formControlName="email">
+            <mat-error *ngIf="formGroup.controls['email'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="password" formControlName="password">
+            <mat-error *ngIf="formGroup.controls['password'].hasError('required')">
+               Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+     
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editar()" [disabled]="formGroup.invalid || !flagEdicion">Editar</button>
+      <button mat-raised-button color="primary" (click)="crear()" [disabled]="formGroup.invalid ">Crear Nuevo</button>
+      <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

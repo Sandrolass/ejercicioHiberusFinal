@@ -1,0 +1,4 @@
+<app-user-form [usuarioEdicion]="usuarioEdicion" (usuarioCreacion)="crearUsuarioF($event)"
+(usuarioEdicionF)="editarUsuarioF($event)" (cancelarTodo)="resetear()"></app-user-form>
+<app-user-list [listaUsuarios]="listaUsuarios"  
+(usuarioBorrar)="borrarUsuario($event)" (usuarioEditar)="editarUsuarioI($event)" ></app-user-list>
